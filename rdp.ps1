@@ -19,7 +19,7 @@ $tunnel_is_up = Get-process | where Id -eq $tunnel.Id
 
 if($tunnel_is_up)
 { 
- cmdkey /generic:localhost /user:${rdp_user} /pass:${rdp_pass} > $null
+ cmdkey /generic:localhost /user:${rdp_user} /pass:${rdp_pass}
  $rdp    = Start-Process mstsc -ArgumentList "/f /V:localhost:${lport}" -PassThru
 }
 
